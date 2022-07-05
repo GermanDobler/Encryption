@@ -1,0 +1,16 @@
+.encryptado {
+  background-color: #ff0000 !important;
+  font-size: 15px !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.mostrando {
+  background-color: #003aff !important ;
+  font-size: 15px !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.desencryptado {
+    background-color: #7CAB44  !important ;
+    font-size: 15px !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  }
+  

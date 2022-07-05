@@ -1,22 +1,21 @@
 import React, { Fragment } from "react";
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import './encryption.png';
+import Buttons from "./Buttons";
+import { Grid } from "@mui/material";
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="#">
+        Encryptation
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -26,15 +25,9 @@ function Copyright(props) {
 
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
+  // function Encriptar(){
+  // getElementById()
+  // }
   return (
     <Fragment >
       <Container component="main" maxWidth="xs">
@@ -47,12 +40,11 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          </Avatar>
+          <img src={require('./encryption.png')} height={200} width={200} />
           <Typography component="h1" variant="h5">
             Encryption
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" noValidate sx={{ mt: 14 }}>
             <TextField
               margin="normal"
               required
@@ -63,40 +55,23 @@ export default function SignIn() {
               autoComplete="Inserte un numero de 4 digitos"
               autoFocus
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+            <Box>
+              <Grid container spacing={2} sx={{ mt: 2, ml: 3 }}  >
+                <Grid xs={1}>
+                </Grid>
+                <Grid xs={4}>
+                  <Buttons estado="encryptado" nombre="Encryptar"></Buttons>
+                </Grid>
+                <Grid xs={4}>
+                  <Buttons estado="desencryptado" nombre="Desencrytar"></Buttons>
+                </Grid>
+                <Grid xs={2}>
+                </Grid>
+                <Grid xs={12} sx={{ mt: 2, ml:5}} >
+                  <Buttons estado="mostrando" nombre="Mostrar"></Buttons>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+            </Box>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
@@ -104,10 +79,4 @@ export default function SignIn() {
     </Fragment>
   );
 }
-
-
-
-
-
-
 
