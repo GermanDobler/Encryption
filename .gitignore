@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#archivos json
+.gitignore
+package-lock.json
+package.json
+yarn.lock
